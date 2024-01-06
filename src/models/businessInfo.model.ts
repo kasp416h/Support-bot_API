@@ -1,6 +1,7 @@
 import { Schema, model } from "mongoose";
 
 export type IBusinessInfo = {
+  companyName: string;
   openingHours?: string;
   contactInfo: {
     phone: string;
@@ -22,10 +23,12 @@ export type IBusinessInfo = {
   environmentalImpact?: string;
   technicalSupportInfo?: string;
   appointmentBookingInfo?: string;
+  isCustomized: boolean;
 };
 
 const businessInfoSchema = new Schema(
   {
+    companyName: { type: String, required: true },
     openingHours: String,
     contactInfo: {
       phone: { type: String, required: true },
@@ -52,6 +55,7 @@ const businessInfoSchema = new Schema(
     environmentalImpact: String,
     technicalSupportInfo: String,
     appointmentBookingInfo: String,
+    isCustomized: { type: Boolean, required: true, default: false },
   },
   {
     timestamps: true,
