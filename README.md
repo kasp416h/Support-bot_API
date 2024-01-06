@@ -1,3 +1,3 @@
-# Support-bot
+# Support-bot-API
 
-A nicely customizable support bot using chat-gpt
+A nicely customizable support bot api using chat-gpt
