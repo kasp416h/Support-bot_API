@@ -1,6 +1,6 @@
-import { Schema, model } from "mongoose";
+import { Schema, model, Document } from "mongoose";
 
-export type IBusinessInfo = {
+export interface IBusinessInfo extends Document {
   companyName: string;
   openingHours?: string;
   contactInfo: {
@@ -26,7 +26,7 @@ export type IBusinessInfo = {
   isCustomized: boolean;
 };
 
-const businessInfoSchema = new Schema(
+const businessInfoSchema = new Schema<IBusinessInfo>(
   {
     companyName: { type: String, required: true },
     openingHours: String,
