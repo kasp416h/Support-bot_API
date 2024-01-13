@@ -5,7 +5,7 @@ module.exports = async function createBusinessInfo() {
     const existingBusinessInfo = await BusinessInfo.findOne();
 
     if (!existingBusinessInfo) {
-      const defaultBusinessInfo: IBusinessInfo = {
+      const defaultBusinessInfo = {
         companyName: "My business",
         contactInfo: {
           phone: "123-456-7890",
